@@ -15,6 +15,12 @@ class Banner
 {
     public static function getBannerById($id) {
         // return  Db::query('select * from banner_item where banner_id =?', [$id]);   // 原生的SQL语句
+        // 闭包
+//        $result = Db::table('banner_item')
+//            ->where(function ($query) use ($id){
+//                $query->where('banner_id', $id);
+//            })
+//            ->select();
         return Db::table('banner_item')->where('banner_id', $id)->select();
 
     }
