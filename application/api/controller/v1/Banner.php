@@ -23,6 +23,6 @@ class Banner
         if(!$banner){
             throw new BannerMissException();
         }
-        return json($banner);
+        return $banner;
     }
 }
