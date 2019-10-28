@@ -12,5 +12,5 @@ use think\Model;
 
 class Product extends BaseModel
 {
-
+    protected $hidden = ['create_time', 'update_time', 'delete_time', 'from' , 'pivot', 'category_id'];
 }
