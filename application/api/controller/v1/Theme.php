@@ -23,7 +23,7 @@ class Theme
         (new IDCollection())->goCheck();  // 验证器
         $ids = explode(',', $ids);
         $result = ThemeModel::with('topicImg,headImg')->select($ids);
-        if(!$result) {
+        if($result->isEmpty()) {
             throw new ThemeException();
         }
         return $result;
@@ -35,7 +35,7 @@ class Theme
     public function getComplexOne($id) {
         (new IDMustBePositiveInt())->goCheck();
         $result = ThemeModel::getThemeWithProducts($id);
-        if(!$result){
+        if($result->isEmpty()){
             throw new ThemeException();
         }
         return $result;

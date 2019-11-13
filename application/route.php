@@ -17,6 +17,12 @@ Route::get('api/v1/Theme/', 'api/v1.Theme/getSimpleList');
 
 Route::get('api/v1/Theme/:id', 'api/v1.Theme/getComplexOne');
 
+Route::get('api/v1/Product/recent', 'api/v1.Product/getRecent');
+
+Route::get('api/v1/Product/byCategory', 'api/v1.Product/getAllInCategory');
+
+Route::get('api/v1/Category/all', 'api/v1.Category/getAllCategories');
+
 
 
 
